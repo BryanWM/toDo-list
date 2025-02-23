@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background-color: #b9b28a6d;
+    transition: background 0.3s linear;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.name-and-mode {
+    width: 530px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.name-and-mode h2 {
+    color: rgb(68, 65, 78);
+}
+
+input [type="checkbox"] {
+    display: none;
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background-color: #b9b28a8d;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0px 10px 40px #00000094;
+}
+
+.container img {
+    width: 23px;
+    margin-right: 2px;
+    transition: background 0.3s linear;
+    
+}
+
+.change-theme {
+    position: absolute;
+}
+label {
+    background-color:  #504B38;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    width: 75px;
+}
+
+label .ball {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 28px;
+    height: 28px;
+    transform: translateX(0px);
+    transition: transform 0.3s linear;
+}
+#change-theme {
+    display: none;
+}
+
+#change-theme:checked + label .ball {
+    transform: translateX(43px);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #b9b28a99;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    color: rgb(68, 65, 78);
+}
+
+input::placeholder {
+    color: rgb(68, 65, 78);
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: #504b389f;
+    color: rgb(40, 38, 45);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    color: rgb(68, 65, 78);
+
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(/images/dark/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 8px;
+    left: 10px;
+}
+
+ul li.checked {
+    color: rgb(68, 65, 78);
+    opacity: 0.5;
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(/images/dark/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background-color: #6c82a82d;
+}
+
+/* modo preto */
+
+.dark {
+    background-color: #151923d9;
+    transition: background 0.3s linear;
+}
+
+.dark .todo-app {
+	background-color: #161c2e;
+    box-shadow: 0px 10px 40px #00000094;
+}
+
+.dark .name-and-mode h2 {
+    color: #ccbcb1;
+}
+
+.dark label {
+	background-color: #0e131f;
+}
+
+.dark label .ball {
+	background-color: rgb(255, 255, 255);
+}
+
+.dark .row {
+	background-color: #0e131f;
+}
+
+.dark button {
+	background-color: #161c2e6b;
+    color: #ccbcb1;
+    transition: 0.3s linear;
+}
+
+.dark ul li {
+    color: #ccbcb1;
+}
+
+.dark input {
+    color: #ccbcb1;
+}
+
+.dark input::placeholder {
+    color: #ccbcb1aa;
+}
+
+.dark ul li::before {
+    background-image: url(/images/light/unchecked-light.png);
+    transition: background 0.3s linear;
+}
+
+.dark ul li.checked::before {
+    background-image: url(/images/light/checked-light.png);
+    transition: background 0.3s linear;
+}
+
+
+/*responsive css*/
+
+@media(max-width: 530px) and (min-width: 320px){
+
+    .container{
+        width: 100vw;
+        min-width: 320px;
+        max-width: 530px;
+    }
+
+    .name-and-mode{
+        min-width: 320px;
+        max-width: 530px;
+        width: 100%;
+        margin-bottom: 0px;
+        padding: 10px;
+    }
+
+    .todo-app {
+        width: 100%;
+        max-width: 530px;
+        border-radius: 10px;
+        padding: 8px;
+        margin: 10px;
+    }
+
+    label {
+        padding: 5px;
+        width: 65px;
+    }
+
+    .row {
+        padding-left: 5px;
+        margin-bottom: 10px;
+    }
+
+    input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 5px;
+    }
+
+    button {
+        padding: 8px 25px;
+        font-size: 14px;
+        border-radius: 40px;
+    }
+
+    ul li {
+        font-size: 14px;
+        padding: 8px 5px 8px 50px;
+    }
+
+    ul li::before{
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        top: 8px;
+        left: 10px;
+    }
+    
+    ul li span {
+        right: 0;
+        top: 8px;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    
+}

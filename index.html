@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do - wenverse </title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/images/icon.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <div class="name-and-mode">
+            <h2>to-do list do brais</h2>
+            <div class="theme-mode">
+                <input type="checkbox" name="change-theme" id="change-theme">
+                <label for="change-theme">
+                    <img src="" class="bi-sun" id="sun-icon"></i>
+                    <img src="" class="bi-moon" id="moon-icon"></i>
+                    <div class="ball"></div>
+                </label>
+            </div>    
+        </div>
+
+        <div class="todo-app">
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Adicione sua tarefa" autocomplete="off">
+                <button onclick=addTask()>add</button>
+            </div>
+            <ul id="list-container">
+            </ul>
+        </div>
+    </div>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
