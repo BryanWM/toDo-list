@@ -23,7 +23,7 @@ Para utilizar o projeto, tem 3 (três) formas:
 > Clonar o repositório com o seguinte snippet:
 
 ```
-  gh repo clone BryanWM/un-partner
+  gh repo clone BryanWM/toDo-list
 ```
 
 # 4. Uso
