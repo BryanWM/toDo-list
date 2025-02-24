@@ -18,7 +18,7 @@ Para utilizar o projeto, tem 3 (três) formas:
 
 > Acessar o site hospedado em: ~~To-Do List~~
 
-> Acessar meu perfil no [GitHub](https://github.com/BryanWM) e baixar o repositório de nome: **to-do list**.
+> Acessar meu perfil no [GitHub](https://github.com/BryanWM) e baixar o repositório de nome: **toDo list**.
 
 > Clonar o repositório com o seguinte snippet:
 
