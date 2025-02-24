@@ -1,6 +1,18 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
+const changeThemeBtn = document.querySelector('#change-theme');
+let isDarkMode = false;
+const sunIcon = document.getElementById('sun-icon');
+const moonIcon = document.getElementById('moon-icon');
+sunIcon.src = "/images/dark/sun-dark.png";
+moonIcon.src = "/images/dark/moon-dark.png";
 
+function saveData() {
+    localStorage.setItem("data", listContainer.innerHTML);
+}
+function showTask() {
+    listContainer.innerHTML = localStorage.getItem("data");
+}
 function addTask() {
     if (inputBox.value === ''){
         alert("Escreva algo para adicionar uma tarefa.");
@@ -17,16 +29,7 @@ function addTask() {
     inputBox.value = "";
     saveData();
 }
-
 showTask();
-
-function saveData() {
-    localStorage.setItem("data", listContainer.innerHTML);
-}
-
-function showTask() {
-    listContainer.innerHTML = localStorage.getItem("data");
-}
 
 listContainer.addEventListener("click", function(e) {
     if(e.target.tagName === "LI"){
@@ -37,14 +40,6 @@ listContainer.addEventListener("click", function(e) {
         saveData();
     }
 }, false)
-
-let isDarkMode = false;
-const sunIcon = document.getElementById('sun-icon');
-const moonIcon = document.getElementById('moon-icon');
-sunIcon.src = "/images/dark/sun-dark.png";
-moonIcon.src = "/images/dark/moon-dark.png";
-
-const changeThemeBtn = document.querySelector('#change-theme');
 changeThemeBtn.addEventListener("change", () => {
     if (isDarkMode) {
         document.body.classList.remove("dark");
@@ -55,6 +50,5 @@ changeThemeBtn.addEventListener("change", () => {
         sunIcon.src = "/images/light/sun-light.png";
         moonIcon.src = "/images/light/moon-light.png";
     }
-
     isDarkMode = !isDarkMode;
-})
+}) 
